@@ -268,7 +268,7 @@ def generate_daily_briefing(user_data, username, today_str):
 
     try:
         genai.configure(api_key=ADMIN_API_KEY)
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        model = genai.GenerativeModel('gemini-2.5-flash')
         response = model.generate_content(prompt)
         user_data['daily_briefing'] = response.text
         user_data['last_briefing_date'] = today_str
@@ -292,7 +292,7 @@ def generate_random_fact():
     
     try:
         genai.configure(api_key=ADMIN_API_KEY)
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        model = genai.GenerativeModel('gemini-2.5-flash')
         
         prompt = f"""
         Tell me a mind-blowing, weird, or incredibly fun fact about {chosen_topic} that most people don't know.
